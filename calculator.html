@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style type="text/css">
+
+        body{
+
+            background-color: #5E6064;
+
+        }
+
+        #wrapper {
+
+            width: 100%;
+            text-align: center;
+
+            
+        }
+
+        .button {
+
+            width: 100px;
+            border: 1px solid #444444;
+            border-right: none;
+            padding: 10px;
+
+
+        }
+        .button:hover{
+
+            background-color: #5E6064;
+            color:#ffffff;
+
+        }
+
+        #inputValue {
+
+            width: 279px;
+            border: 1px solid #444444;
+            padding: 10px;
+            border-bottom: none;
+            background-color: #ffffff;
+
+        }
+
+        .borderlast {
+
+            border-right: 1px solid #444444;
+
+        }
+
+        .bordc {
+
+            border-right: 1px solid #444444;
+            border-bottom: none;
+            border-left: none;
+            width: 99px;
+
+        }
+
+        .topborder {
+
+            border-top: none;
+
+        }
+        #header{
+
+           
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+
+        }
+       
+
+
+    </style>
+
+</head>
+
+<body>       
+   
+    <div id="wrapper">
+        <div id="header">
+            <h1>Calculator</h1>
+            <p>Select below  Numeric Values </p>
+        </div>
+        <div id="row">
+            <input type="text" id="inputValue" disabled><input type="button" value="C" class="button bordc" onclick="clr()">
+        </div>
+        <div id="row">
+            <input type="button" class="button" onclick="dis('1')" value="1"><input type="button" class="button"
+                onclick="dis('2')" value="2"><input type="button" class="button" onclick="dis('3')" value="3"><input
+                type="button" class="button borderlast" onclick="dis('/')" value="/">
+        </div>
+
+        <div id="row">
+            <input type="button" class="button topborder" onclick="dis('4')" value="4"><input type="button"
+                class="button topborder" onclick="dis('5')" value="5"><input type="button" class="button topborder"
+                onclick="dis('6')" value="6"><input type="button" class="button topborder borderlast" onclick="dis('-')"
+                value="-">
+        </div>
+
+        <div id="row">
+            <input type="button" class="button topborder" onclick="dis('7')" value="7"><input type="button"
+                class="button topborder" onclick="dis('8')" value="8"><input type="button" class="button topborder"
+                onclick="dis('9')" value="9"><input type="button" class="button borderlast topborder" onclick="dis('+')"
+                value="+">
+        </div>
+        <div id="row">
+            <input type="button" class="button topborder" onclick="dis('.')" value="."><input type="button"
+                class="button topborder" onclick="dis('0')" value="0"><input type="button" class="button topborder"
+                onclick="solve()" value="="><input type="button" class="button borderlast topborder" onclick="dis('*')"
+                value="*">
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        function dis(val) {
+
+            document.getElementById('inputValue').value += val;
+
+        }
+
+        function solve() {
+
+            let x = document.getElementById('inputValue').value
+            let y = eval(x)
+            document.getElementById('inputValue').value = y
+
+        }
+
+        function clr() {
+
+            document.getElementById('inputValue').value = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
